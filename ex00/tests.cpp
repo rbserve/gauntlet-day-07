@@ -42,5 +42,5 @@ TEST_CASE("removing a missing item is a no-op: count unchanged, other items unto
     inv.add(potion);
     inv.remove(sword);
     REQUIRE(inv.count() == 1);
-    CHECK_FALSE(inv.has(potion));
+    REQUIRE(inv.has(potion));
 }
