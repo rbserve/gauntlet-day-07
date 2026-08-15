@@ -3,7 +3,7 @@
 
 void Inventory::add(const std::string& item){
     //redundant call to prevent warning 
-    std::cout << "Adding " << item <<  " to be implemented";
+    m_items.push_back(item);
 };
 
 void Inventory::remove(const std::string& item){
