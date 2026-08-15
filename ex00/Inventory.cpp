@@ -12,7 +12,12 @@ void Inventory::remove(const std::string& item){
 };   // absent item: no-op, cycle 4 proves it
 
 bool Inventory::has(const std::string& item) const{
-    return item == "";
+    for (std::string s : m_items){
+        if (s == item){
+            return true;
+        }
+    }
+    return false;
 };
 
 int  Inventory::count() const{
