@@ -6,5 +6,5 @@ bool Inventory::has(const std::string& item) const{
 };
 
 int  Inventory::count() const{
-    return -1;
+    return m_items.size();
 };
