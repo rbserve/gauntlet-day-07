@@ -2,13 +2,16 @@
 #include <iostream>
 
 void Inventory::add(const std::string& item){
-    //redundant call to prevent warning 
     m_items.push_back(item);
 };
 
 void Inventory::remove(const std::string& item){
-    //redundant call to prevent warning 
-    std::cout << "Remove " << item <<  " to be implemented";
+    for (auto it = m_items.begin(); it != m_items.end();){
+        if (*it == item){
+            m_items.erase(it);
+            break;
+        }else ++it;
+    }
 };   // absent item: no-op, cycle 4 proves it
 
 bool Inventory::has(const std::string& item) const{
