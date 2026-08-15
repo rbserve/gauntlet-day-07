@@ -1,5 +1,5 @@
 # The binary this exercise builds
-NAME := save
+NAME := tests
 
 # Compiler and the gauntlet's mandatory flags
 CXX      := c++
