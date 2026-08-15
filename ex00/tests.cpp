@@ -22,3 +22,13 @@ TEST_CASE("has() finds added item and rejects missing one") {
     REQUIRE(inv.has(std::string("potion")));
     CHECK_FALSE(inv.has(std::string("sword")));
 }
+
+//2 assertions
+TEST_CASE("removing an item drops the count and has() stops finding it") {
+    Inventory inv;
+    std::string potion = "potion";
+    inv.add(potion);
+    inv.remove(potion);
+    REQUIRE(inv.count() == 0);
+    CHECK_FALSE(inv.has(potion));
+}
