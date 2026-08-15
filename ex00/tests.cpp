@@ -32,3 +32,15 @@ TEST_CASE("removing an item drops the count and has() stops finding it") {
     REQUIRE(inv.count() == 0);
     CHECK_FALSE(inv.has(potion));
 }
+
+//2 assertions
+TEST_CASE("removing a missing item is a no-op: count unchanged, other items untouched") {
+    Inventory inv;
+    std::string potion = "potion";
+    std::string sword = "sword";
+
+    inv.add(potion);
+    inv.remove(sword);
+    REQUIRE(inv.count() == 1);
+    CHECK_FALSE(inv.has(potion));
+}
