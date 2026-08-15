@@ -14,3 +14,11 @@ TEST_CASE("adding an item raise the count") {
     inv.add(std::string("potion"));
     REQUIRE(inv.count() == 1);
 }
+
+//2 assertions
+TEST_CASE("has() finds added item and rejects missing one") {
+    Inventory inv;
+    inv.add(std::string("potion"));
+    REQUIRE(inv.has(std::string("potion")));
+    CHECK_FALSE(inv.has(std::string("sword")));
+}
